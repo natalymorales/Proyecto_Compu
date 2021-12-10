@@ -1274,7 +1274,7 @@ int main()
 
 
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(-188.069f, 0.492f , 4.376f));
+		model = glm::translate(model, glm::vec3(-188.069f, 0.495f , 4.376f));
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "activatransparencia"), 0);
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		bulma.Draw(lightingShader);
@@ -1839,7 +1839,7 @@ void DoMovement()
 		if (rotarn2 == true)
 		{
 			rot += 0.1f;
-			if (rot >= 360.0f)
+			if (rot >= 0.0f)
 			{
 				rotarn2 = false;
 			}
