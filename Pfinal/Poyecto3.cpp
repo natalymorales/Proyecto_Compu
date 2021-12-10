@@ -50,6 +50,9 @@ bool rotarn1 = false;
 bool rotarn2 = false;
 bool rotarp1 = false;
 bool rotarp2 = false;
+float rot3 = 0.0f;
+bool puertar = false;
+bool puertar2 = false;
 
 
 // Light attributes
@@ -110,6 +113,21 @@ rotCarXInc = 0.0f,
 rotCarYInc = 0.0f,
 rotCarZInc = 0.0f;
 
+//Animacion de Goku en la nube 
+
+float	posGnubeX = 0.0f,
+posGnubeY = 0.0f,
+posGnubeZ = 0.0f,
+rotGnubeX = 0.0f,
+rotGnubeY = 0.0f,
+rotGnubeZ = 0.0f;
+
+float	posGnubeXInc = 0.0f,
+posGnubeYInc = 0.0f,
+posGnubeZInc = 0.0f,
+rotGnubeXInc = 0.0f,
+rotGnubeYInc = 0.0f,
+rotGnubeZInc = 0.0f;
 
 
 bool anim = false;
@@ -189,6 +207,14 @@ typedef struct _frame
 	float rotCarY;
 	float rotCarZ;
 
+	//Goku Nube 
+	//Carro
+	float posGnubeX;		//Variable para PosicionX
+	float posGnubeY;		//Variable para PosicionY
+	float posGnubeZ;		//Variable para PosicionZ
+	float rotGnubeX;
+	float rotGnubeY;
+	float rotGnubeZ;
 
 }FRAME;
 
@@ -258,6 +284,13 @@ void saveFrame(void)
 	KeyFrame[FrameIndex].rotCarY = rotCarY;
 	KeyFrame[FrameIndex].rotCarZ = rotCarZ;
 	
+	//Goku nube 
+	KeyFrame[FrameIndex].posGnubeX = posGnubeX;
+	KeyFrame[FrameIndex].posGnubeY = posGnubeY;
+	KeyFrame[FrameIndex].posGnubeZ = posGnubeZ;
+	KeyFrame[FrameIndex].rotGnubeX = rotGnubeX;
+	KeyFrame[FrameIndex].rotGnubeY = rotGnubeY;
+	KeyFrame[FrameIndex].rotGnubeZ = rotGnubeZ;
 
 	FrameIndex++;
 }
@@ -307,6 +340,15 @@ void resetElements(void)//-Resetear las posiciones
 	rotCarX = KeyFrame[0].rotCarX;
 	rotCarY = KeyFrame[0].rotCarY;
 	rotCarZ = KeyFrame[0].rotCarZ;
+
+	//goku nube
+	//Carro
+	posGnubeX = KeyFrame[0].posGnubeX;
+	posGnubeY = KeyFrame[0].posGnubeY;
+	posGnubeZ = KeyFrame[0].posGnubeZ;
+	rotGnubeX = KeyFrame[0].rotGnubeX;
+	rotGnubeY = KeyFrame[0].rotGnubeY;
+	rotGnubeZ = KeyFrame[0].rotGnubeZ;
 
 }
 
@@ -359,6 +401,13 @@ void interpolation(void)//Guardo las interpolaciones
 	rotCarYInc = (KeyFrame[playIndex + 1].rotCarY - KeyFrame[playIndex].rotCarY) / i_max_steps;
 	rotCarZInc = (KeyFrame[playIndex + 1].rotCarZ - KeyFrame[playIndex].rotCarZ) / i_max_steps;
 
+	// Goku nube 
+	posGnubeXInc = (KeyFrame[playIndex + 1].posGnubeX - KeyFrame[playIndex].posGnubeX) / i_max_steps;
+	posGnubeYInc = (KeyFrame[playIndex + 1].posGnubeY - KeyFrame[playIndex].posGnubeY) / i_max_steps;
+	posGnubeZInc = (KeyFrame[playIndex + 1].posGnubeZ - KeyFrame[playIndex].posGnubeZ) / i_max_steps;
+	rotGnubeXInc = (KeyFrame[playIndex + 1].rotGnubeX - KeyFrame[playIndex].rotGnubeX) / i_max_steps;
+	rotGnubeYInc = (KeyFrame[playIndex + 1].rotGnubeY - KeyFrame[playIndex].rotGnubeY) / i_max_steps;
+	rotGnubeZInc = (KeyFrame[playIndex + 1].rotGnubeZ - KeyFrame[playIndex].rotGnubeZ) / i_max_steps;
 }
 
 
@@ -427,15 +476,20 @@ int main()
 	Model BrazoIzq((char*)"Models/Personaje/brazoizq.obj");*/
 	Model Cabeza((char*)"Models/Personaje/cabeza.obj");
 	Model Goku((char*)"Models/goku/sccc.obj");
-	Model Planeta((char*)"Models/planetakio/planeta.obj");
+	//Model Planeta((char*)"Models/planetakio/planeta.obj");
 	Model Carro((char*)"Models/carroOri/carro.obj");
-	Model LlantaIzq((char*)"Models/carroOri/llantai.obj");
-	Model LlantaDer((char*)"Models/carroOri/llantad.obj");
+	//Model LlantaIzq((char*)"Models/carroOri/llantai.obj");
+	//Model LlantaDer((char*)"Models/carroOri/llantad.obj");
 	Model Bills((char*)"Models/bills/bills1.obj");
 	Model Nubes((char*)"Models/Nubes/nubes.obj");
 	Model Puerta((char*)"Models/PuertaGa/puertag.obj");
-
-	
+	Model Kaio((char*)"Models/kaio/kaioh.obj");
+	Model Planetakaio((char*)"Models/prueba/planetakaio.obj");
+	Model Planetagoku((char*)"Models/casaG/casag.obj");
+	Model bulma((char*)"Models/bulma/bulma.obj");
+	Model gokunube((char*)"Models/gokunube/goku.obj");
+	Model PuertaIz((char*)"Models/Pizq/puertaIzq.obj");
+	Model PuertaDe((char*)"Models/Pder/puertaDer.obj");
 
 	// Build and compile our shader program
 
@@ -478,7 +532,7 @@ int main()
 	KeyFrame[0].giroTurbina = 10.0f;//1000
 
 	KeyFrame[1].posPodX = -5.0f;//-50
-	KeyFrame[1].posPodY = 30.0f;//-300
+	KeyFrame[1].posPodY = 20.0f;//-300
 	KeyFrame[1].posPodZ = 0.0f;
 	KeyFrame[1].rotPodX = -6.0f;//-60
 	KeyFrame[1].rotPodY = 0.0f;
@@ -486,83 +540,83 @@ int main()
 	KeyFrame[1].giroTurbina = 20.0f;//2000
 
 	KeyFrame[2].posPodX = -10.0f;//-100
-	KeyFrame[2].posPodY = 40.0f;//400
-	KeyFrame[2].posPodZ = 35.0f;//350
-	KeyFrame[2].rotPodX = -30.0f;
+	KeyFrame[2].posPodY = 30.0f;//400
+	KeyFrame[2].posPodZ = 25.0f;//350
+	KeyFrame[2].rotPodX = -20.0f;
 	KeyFrame[2].rotPodY = 0.0f;
 	KeyFrame[2].rotPodZ = 0.0f;
 	KeyFrame[2].giroTurbina = 30.0f;//3000
 
-	KeyFrame[3].posPodX = -20.0f;//-200
-	KeyFrame[3].posPodY = 40.0f;//400
+	KeyFrame[3].posPodX = -10.0f;//-200
+	KeyFrame[3].posPodY = 20.0f;//400
 	KeyFrame[3].posPodZ = 70.0f;//700
 	KeyFrame[3].rotPodX = 0.0f;
 	KeyFrame[3].rotPodY = 0.0f;
-	KeyFrame[3].rotPodZ = 72.0f;//720
+	KeyFrame[3].rotPodZ = 42.0f;//720
 	KeyFrame[3].giroTurbina = 40.0f;//4000
 
 	KeyFrame[4].posPodX = -20.0f;//-200
-	KeyFrame[4].posPodY = 40.0f;//400
-	KeyFrame[4].posPodZ = 45.0f;//1050
+	KeyFrame[4].posPodY = 30.0f;//400
+	KeyFrame[4].posPodZ = 35.0f;//1050
 	KeyFrame[4].rotPodX = 0.0f;
 	KeyFrame[4].rotPodY = 0.0f;
-	KeyFrame[4].rotPodZ = 72.0f;//720
+	KeyFrame[4].rotPodZ = 42.0f;//720
 	KeyFrame[4].giroTurbina = 50.0f;//5000
 
-	KeyFrame[5].posPodX = -50.0f;//-500
-	KeyFrame[5].posPodY = 20.0f;//200
-	KeyFrame[5].posPodZ = 40.0f;//1400
+	KeyFrame[5].posPodX = -40.0f;//-500
+	KeyFrame[5].posPodY = 10.0f;//200
+	KeyFrame[5].posPodZ = 30.0f;//1400
 	KeyFrame[5].rotPodX = 0.0f;
 	KeyFrame[5].rotPodY = -40.0f;
 	KeyFrame[5].rotPodZ = 72.0f;//720
 	KeyFrame[5].giroTurbina = 40.0f;//4000
 
-	KeyFrame[6].posPodX = -80.0f;//-800
+	KeyFrame[6].posPodX = -40.0f;//-800
 	KeyFrame[6].posPodY = 10.0f;//100
-	KeyFrame[6].posPodZ = 50.0f;//1500
+	KeyFrame[6].posPodZ = 15.0f;//1500
 	KeyFrame[6].rotPodX = 0.0f;
-	KeyFrame[6].rotPodY = -60.0f;
+	KeyFrame[6].rotPodY = -30.0f;
 	KeyFrame[6].rotPodZ = 72.0f;//720
 	KeyFrame[6].giroTurbina = 30.0f;//3000
 
-	KeyFrame[7].posPodX = -110.0f;//-110
-	KeyFrame[7].posPodY = 50.0f;
-	KeyFrame[7].posPodZ = 55.0f;//1550
+	KeyFrame[7].posPodX = -55.0f;//-110
+	KeyFrame[7].posPodY = 20.0f;
+	KeyFrame[7].posPodZ = 25.0f;//1550
 	KeyFrame[7].rotPodX = 0.0f;
-	KeyFrame[7].rotPodY = -80.0f;
+	KeyFrame[7].rotPodY = -40.0f;
 	KeyFrame[7].rotPodZ = 72.0f;//720
 	KeyFrame[7].giroTurbina = 20.0f;//2000
 	//
-	KeyFrame[8].posPodX = -80.0f;//-800
+	KeyFrame[8].posPodX = -55.0f;//-800
 	KeyFrame[8].posPodY = 10.0f;//100
-	KeyFrame[8].posPodZ = 50.0f;//1500
+	KeyFrame[8].posPodZ = 25.0f;//1500
 	KeyFrame[8].rotPodX = 0.0f;
-	KeyFrame[8].rotPodY = -60.0f;
+	KeyFrame[8].rotPodY = -30.0f;
 	KeyFrame[8].rotPodZ = 72.0f;//720
 	KeyFrame[8].giroTurbina = 30.0f;//3000
 	//
 	KeyFrame[9].posPodX = -50.0f;//-500
-	KeyFrame[9].posPodY = 20.0f;//200
-	KeyFrame[9].posPodZ = 40.0f;//1400
+	KeyFrame[9].posPodY = 10.0f;//200
+	KeyFrame[9].posPodZ = 20.0f;//1400
 	KeyFrame[9].rotPodX = 0.0f;
-	KeyFrame[9].rotPodY = -40.0f;
+	KeyFrame[9].rotPodY = -20.0f;
 	KeyFrame[9].rotPodZ = 72.0f;//720
 	KeyFrame[9].giroTurbina = 40.0f;//4000
 
 
 	KeyFrame[10].posPodX = -30.0f;//-1300
 	KeyFrame[10].posPodY = -10.0f;
-	KeyFrame[10].posPodZ = 60.0f;//1600
+	KeyFrame[10].posPodZ = 30.0f;//1600
 	KeyFrame[10].rotPodX = 0.0f;
-	KeyFrame[10].rotPodY = -75.0f;
+	KeyFrame[10].rotPodY = -35.0f;
 	KeyFrame[10].rotPodZ = 72.0f;//720
 	KeyFrame[10].giroTurbina = 10.0f;//1000
 
 	KeyFrame[11].posPodX = -35.0f;//-1350
 	KeyFrame[11].posPodY = -10.0f;
-	KeyFrame[11].posPodZ = 60.0f;//1600
+	KeyFrame[11].posPodZ = 30.0f;//1600
 	KeyFrame[11].rotPodX = 0.0f;
-	KeyFrame[11].rotPodY = -80.0f;
+	KeyFrame[11].rotPodY = -40.0f;
 	KeyFrame[11].rotPodZ = 72.0f;//720
 	KeyFrame[11].giroTurbina = 50.0f;//500
 
@@ -623,14 +677,14 @@ int main()
 	KeyFrame[7].movBY = 20.0f;
 	KeyFrame[7].movBZ = 0.0f;
 
-	KeyFrame[8].movRotBX = -360.0f;  //Movernos en -X para que suba  //La rotacion 
+	KeyFrame[8].movRotBX = -36.0f;  //Movernos en -X para que suba  //La rotacion 
 	KeyFrame[8].movRotBY = 0.0f;
 	KeyFrame[8].movRotBZ = 0.0f;
 	KeyFrame[8].movBX = -20.0f;  //Mov en  -X para avanzar
 	KeyFrame[8].movBY = -10.0f;
 	KeyFrame[8].movBZ = 0.0f;
 
-	KeyFrame[9].movRotBX = -380.0f;  //Movernos en -X para que suba  //La rotacion  /-360
+	KeyFrame[9].movRotBX = -38.0f;  //Movernos en -X para que suba  //La rotacion  /-360
 	KeyFrame[9].movRotBY = 0.0f;
 	KeyFrame[9].movRotBZ = 20.0f;
 	KeyFrame[9].movBX = -30.0f;  //Mov en  -X para avanzar
@@ -644,7 +698,7 @@ int main()
 	KeyFrame[10].movBY = -10.0f;
 	KeyFrame[10].movBZ = 0.0f;
 
-	KeyFrame[11].movRotBX = -360.0f;  //Movernos en -X para que suba  //La rotacion  /360
+	KeyFrame[11].movRotBX = -36.0f;  //Movernos en -X para que suba  //La rotacion  /360
 	KeyFrame[11].movRotBY = 0.0f;
 	KeyFrame[11].movRotBZ = 20.0f;
 	KeyFrame[11].movBX = -30.0f;  //Mov en  -X para avanzar
@@ -745,6 +799,105 @@ int main()
 	//KeyFrame[5].rotCarY = 55.672f;//
 	//KeyFrame[5].rotCarZ = 60.475f;
 
+	//Goku nube 
+	KeyFrame[0].posGnubeX = 0.0f;
+	KeyFrame[0].posGnubeY = 0.0f;
+	KeyFrame[0].posGnubeZ = 0.0f;
+	KeyFrame[0].rotGnubeX = 0.0f;//-90
+	KeyFrame[0].rotGnubeY = 0.0f;
+	KeyFrame[0].rotGnubeZ = 0.0f;
+
+	KeyFrame[1].posGnubeX = 0.0f;
+	KeyFrame[1].posGnubeY = 0.0f;
+	KeyFrame[1].posGnubeZ = 4.591f;
+	KeyFrame[1].rotGnubeX = 0.0f;//-90
+	KeyFrame[1].rotGnubeY = 0.0f;
+	KeyFrame[1].rotGnubeZ = 0.0f;
+
+
+	KeyFrame[2].posGnubeX = 0.0f;
+	KeyFrame[2].posGnubeY = 0.0f;
+	KeyFrame[2].posGnubeZ = 15.0f;
+	KeyFrame[2].rotGnubeX = 0.0f;//-45.054
+	KeyFrame[2].rotGnubeY = 19.736f;
+	KeyFrame[2].rotGnubeZ = 0.0f;
+
+	KeyFrame[3].posGnubeX = 0.0f;
+	KeyFrame[3].posGnubeY = 0.0f;
+	KeyFrame[3].posGnubeZ = 15.0f;
+	KeyFrame[3].rotGnubeX = -6.291f;//-45.054
+	KeyFrame[3].rotGnubeY = 74.48f;
+	KeyFrame[3].rotGnubeZ = -13.642f;
+
+	KeyFrame[4].posGnubeX = 15.0f;
+	KeyFrame[4].posGnubeY = 0.0f;
+	KeyFrame[4].posGnubeZ = 15.0f;
+	KeyFrame[4].rotGnubeX = -6.291f;//-45.054
+	KeyFrame[4].rotGnubeY = 74.48f;
+	KeyFrame[4].rotGnubeZ = -13.642f;
+
+	KeyFrame[5].posGnubeX = 15.0f;
+	KeyFrame[5].posGnubeY = 0.0f;
+	KeyFrame[5].posGnubeZ = 15.0f;
+	KeyFrame[5].rotGnubeX = -6.291f;//-45.054
+	KeyFrame[5].rotGnubeY = 120.00f;
+	KeyFrame[5].rotGnubeZ = -13.642f;
+
+	KeyFrame[6].posGnubeX = 19.0f;
+	KeyFrame[6].posGnubeY = 0.0f;
+	KeyFrame[6].posGnubeZ = 15.00f;
+	KeyFrame[6].rotGnubeX = -6.291f;//-45.054
+	KeyFrame[6].rotGnubeY = 120.00f;
+	KeyFrame[6].rotGnubeZ = -13.642f;
+
+	KeyFrame[7].posGnubeX = 19.0f;
+	KeyFrame[7].posGnubeY = 0.0f;
+	KeyFrame[7].posGnubeZ = -16.5f;
+	KeyFrame[7].rotGnubeX = -6.291f;//-45.054
+	KeyFrame[7].rotGnubeY = 180.00f;
+	KeyFrame[7].rotGnubeZ = -13.642f;
+
+	KeyFrame[8].posGnubeX = -16.0f;
+	KeyFrame[8].posGnubeY = 0.0f;
+	KeyFrame[8].posGnubeZ = -16.5f;
+	KeyFrame[8].rotGnubeX = -6.291f;//-45.054
+	KeyFrame[8].rotGnubeY = 270.00f;
+	KeyFrame[8].rotGnubeZ = -13.642f;
+
+	KeyFrame[9].posGnubeX = -16.0f;
+	KeyFrame[9].posGnubeY = 0.0f;
+	KeyFrame[9].posGnubeZ = -16.5f;
+	KeyFrame[9].rotGnubeX = -6.291f;//-45.054
+	KeyFrame[9].rotGnubeY = 360.00f;
+	KeyFrame[9].rotGnubeZ = -13.642f;
+
+	KeyFrame[10].posGnubeX = -16.0f;
+	KeyFrame[10].posGnubeY = 0.0f;
+	KeyFrame[10].posGnubeZ = 8.831f;
+	KeyFrame[10].rotGnubeX = -6.291f;//-45.054
+	KeyFrame[10].rotGnubeY = 360.00f;
+	KeyFrame[10].rotGnubeZ = -13.642f;
+
+	KeyFrame[11].posGnubeX = -16.0f;
+	KeyFrame[11].posGnubeY = 0.0f;
+	KeyFrame[11].posGnubeZ = 8.831f;
+	KeyFrame[11].rotGnubeX = -6.291f;//-45.054
+	KeyFrame[11].rotGnubeY = 450.00f;
+	KeyFrame[11].rotGnubeZ = -13.642f;
+
+	KeyFrame[12].posGnubeX = 0.0f;
+	KeyFrame[12].posGnubeY = 0.0f;
+	KeyFrame[12].posGnubeZ = 8.831f;
+	KeyFrame[12].rotGnubeX = -6.291f;//-45.054
+	KeyFrame[12].rotGnubeY = 450.00f;
+	KeyFrame[12].rotGnubeZ = -13.642f;
+
+	KeyFrame[13].posGnubeX = 0.0f;
+	KeyFrame[13].posGnubeY = 0.0f;
+	KeyFrame[13].posGnubeZ = 0.0f;
+	KeyFrame[13].rotGnubeX = -6.291f;//-45.054
+	KeyFrame[13].rotGnubeY = 540.00f;
+	KeyFrame[13].rotGnubeZ = -13.642f;
 
 	// Set up vertex data (and buffer(s)) and attribute pointers
 	GLfloat vertices[] =
@@ -952,7 +1105,7 @@ int main()
 		GLint viewPosLoc = glGetUniformLocation(lightingShader.Program, "viewPos");
 		glUniform3f(viewPosLoc, camera.GetPosition().x, camera.GetPosition().y, camera.GetPosition().z);
 		// Set material properties
-		glUniform1f(glGetUniformLocation(lightingShader.Program, "material.shininess"), 32.0f);
+		glUniform1f(glGetUniformLocation(lightingShader.Program, "material.shininess"), 92.0f);//32
 		// == ==========================
 		// Here we set all the uniforms for the 5/6 types of lights we have. We have to set them manually and index
 		// the proper PointLight struct in the array to set each uniform variable. This can be done more code-friendly
@@ -961,9 +1114,9 @@ int main()
 		// == ==========================
 		// Directional light
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.direction"), -0.2f, -1.0f, -0.3f);
-		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.ambient"), 0.937f, 0.941f, 0.619f);
-		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.diffuse"), 0.4f, 0.4f, 0.4f);
-		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.specular"), 0.5f, 0.5f, 0.5f);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.ambient"), 1.0f, 1.0f, 1.0f); //0.937f, 0.941f, 0.619f);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.diffuse"), 0.0f, 0.0f, 0.0f);//0.4f, 0.4f, 0.4f);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.specular"), 0.1f, 0.1f, 0.1f);//0.5f, 0.5f, 0.5f);
 
 
 		// Point light 1
@@ -1002,7 +1155,7 @@ int main()
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "pointLights[3].specular"), 1.0f, 0.0f, 1.0f);
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "pointLights[3].constant"), 1.0f);
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "pointLights[3].linear"), 0.1f);
-		glUniform1f(glGetUniformLocation(lightingShader.Program, "pointLights[3].quadratic"), 0.52f);
+		glUniform1f(glGetUniformLocation(lightingShader.Program, "pointLights[3].quadratic"), 0.52f);//52
 
 		// SpotLight
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "spotLight.position"), camera.GetPosition().x, camera.GetPosition().y, camera.GetPosition().z);
@@ -1012,12 +1165,12 @@ int main()
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "spotLight.specular"), 0.0f, 0.0f, 0.0f);
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "spotLight.constant"), 1.0f);
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "spotLight.linear"), 0.1f);
-		glUniform1f(glGetUniformLocation(lightingShader.Program, "spotLight.quadratic"), 0.52f);
+		glUniform1f(glGetUniformLocation(lightingShader.Program, "spotLight.quadratic"), 0.52f);//52
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "spotLight.cutOff"), glm::cos(glm::radians(12.5f)));
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "spotLight.outerCutOff"), glm::cos(glm::radians(15.0f)));
 
 		// Set material properties
-		glUniform1f(glGetUniformLocation(lightingShader.Program, "material.shininess"), 52.0f);
+		glUniform1f(glGetUniformLocation(lightingShader.Program, "material.shininess"), 92.0f);//52
 
 		// Create camera transformations
 		glm::mat4 view;
@@ -1056,9 +1209,8 @@ int main()
 		//model = glm::rotate(model, glm::radians(rot), glm::vec3(0.0f, 1.0f, 0.0));
 		//model = glm::rotate(model, glm::radians(-rotRodIzq), glm::vec3(1.0f, 0.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		Planeta.Draw(lightingShader);
+		Planetakaio.Draw(lightingShader);
 	
-
 
 		//view = camera.GetViewMatrix();
 		//model = glm::translate(tmp, glm::vec3(-0.5f, 0.0f, -0.1f));
@@ -1113,6 +1265,49 @@ int main()
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "activatransparencia"), 0);
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		Puerta.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		//model = glm::rotate(model, glm::radians(rot), glm::vec3(1.0f, 0.0f, 0.0f));
+		glUniform1f(glGetUniformLocation(lightingShader.Program, "activatransparencia"), 0);
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Kaio.Draw(lightingShader);
+
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-188.069f, 0.492f , 4.376f));
+		glUniform1f(glGetUniformLocation(lightingShader.Program, "activatransparencia"), 0);
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		bulma.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		/*model = glm::translate(model, glm::vec3(0.0f, 0.853f, 0.583f));*/
+		model = glm::translate(model, glm::vec3(-189.979f + posGnubeX, 1.8f + posGnubeY, 0.527f + posGnubeZ));
+		model = glm::rotate(model, glm::radians(rotGnubeX), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(rotGnubeY), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(rotGnubeZ), glm::vec3(0.0f, 0.0f, 1.00f));
+		glUniform1f(glGetUniformLocation(lightingShader.Program, "activatransparencia"), 0);
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		gokunube.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		glUniform1f(glGetUniformLocation(lightingShader.Program, "activatransparencia"), 0);
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		gokunube.Draw(lightingShader);
+		Planetagoku.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-188.943f, 2.513f, 2.641f));
+		model = glm::rotate(model, glm::radians(rot3), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniform1f(glGetUniformLocation(lightingShader.Program, "activatransparencia"), 0);
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		PuertaDe.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-191.064f, 2.513f, 2.641f));
+		model = glm::rotate(model, glm::radians(-rot3), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniform1f(glGetUniformLocation(lightingShader.Program, "activatransparencia"), 0);
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		PuertaIz.Draw(lightingShader);
 
 		//Carro
 		//model = glm::mat4(1);
@@ -1288,6 +1483,15 @@ void animacion()
 				rotCarX += rotCarXInc;
 				rotCarY += rotCarYInc;
 				rotCarZ += rotCarZInc;
+
+				//Nube Goku
+				//Carro
+				posGnubeX += posGnubeXInc;
+				posGnubeY += posGnubeYInc;
+				posGnubeZ += posGnubeZInc;
+				rotGnubeX += rotGnubeXInc;
+				rotGnubeY += rotGnubeYInc;
+				rotGnubeZ += rotGnubeZInc;
 
 				i_curr_steps++;
 			}
@@ -1521,7 +1725,7 @@ void DoMovement()
 			rotarp1 = true;
 		else
 
-			rotarp2 = false;
+			rotarp1 = false;
 	}
 	if (keys[GLFW_KEY_I]) {
 		active = !active;
@@ -1529,7 +1733,16 @@ void DoMovement()
 			rotarn1 = true;
 		else
 
-			rotarn2 = false;
+			rotarn1 = false;
+	}
+
+	if (keys[GLFW_KEY_U]) {
+		active = !active;
+		if (active)
+			puertar = true;
+		else
+
+			puertar = false;
 	}
 
 	
@@ -1616,7 +1829,7 @@ void DoMovement()
 		{
 			rot -= 0.1f;
 
-			if (rot <= 360.0f)
+			if (rot <= -360.0f)
 			{
 				rotarn2 = true;
 			}
@@ -1626,9 +1839,35 @@ void DoMovement()
 		if (rotarn2 == true)
 		{
 			rot += 0.1f;
-			if (rot >= 0.0f)
+			if (rot >= 360.0f)
 			{
-				rotarp2 = false;
+				rotarn2 = false;
+			}
+
+		}
+
+	}
+
+	//Puerta goku
+	if (puertar)
+	{
+		if (puertar2 == false)
+		{
+			rot3 -= 0.1f;
+
+			if (rot3 <= -90.0f)
+			{
+				puertar2 = true;
+			}
+
+		}
+
+		if (puertar2 == true)
+		{
+			rot3 += 0.1f;
+			if (rot3 >= 0.0f)
+			{
+				puertar2 = false;
 			}
 
 		}

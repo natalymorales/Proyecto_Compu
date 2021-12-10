@@ -1,0 +1,182 @@
+newmtl BambooFBXASC046002SG
+illum 4
+Kd 0.10 0.18 0.06
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.03 0.05 0.01
+Ns 23.00
+newmtl BambooFBXASC046002SG1
+illum 4
+Kd 0.03 0.05 0.02
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.01 0.01 0.00
+Ns 23.00
+newmtl BambooLeavesFBXASC046038SG
+illum 4
+Kd 0.08 0.21 0.05
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.02 0.05 0.01
+Ns 23.00
+newmtl BaseFBXASC046001SG
+illum 4
+Kd 0.02 0.15 0.02
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.01 0.04 0.01
+Ns 23.00
+newmtl BaseFBXASC046001SG1
+illum 4
+Kd 0.57 0.42 0.11
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.14 0.10 0.03
+Ns 23.00
+newmtl BushFBXASC046002SG
+illum 4
+Kd 0.02 0.05 0.01
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.00 0.01 0.00
+Ns 23.00
+newmtl DoorSG
+illum 4
+Kd 0.04 0.13 0.08
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.01 0.03 0.02
+Ns 23.00
+newmtl DoorSG1
+illum 4
+Kd 0.00 0.01 0.01
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.00 0.00 0.00
+Ns 23.00
+newmtl HouseBaseSG
+illum 4
+Kd 0.68 0.70 0.80
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.17 0.17 0.20
+Ns 23.00
+newmtl PailHandleSG
+illum 4
+Kd 0.43 0.12 0.03
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.11 0.03 0.01
+Ns 23.00
+newmtl PailSG
+illum 4
+Kd 0.20 0.06 0.02
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.05 0.01 0.01
+Ns 23.00
+newmtl PlaneFBXASC046001SG
+illum 4
+Kd 0.80 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.20 0.00 0.00
+Ns 23.00
+newmtl PlaneFBXASC046001SG1
+illum 4
+Kd 0.80 0.80 0.80
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.20 0.20 0.20
+Ns 34.00
+newmtl RoofSG
+illum 4
+Kd 0.01 0.01 0.02
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.00 0.00 0.00
+Ns 23.00
+newmtl WallBrickSG
+illum 4
+Kd 0.80 0.80 0.80
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.20 0.20 0.20
+Ns 23.00
+newmtl WallSG
+illum 4
+Kd 0.68 0.70 0.80
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.17 0.17 0.20
+Ns 23.00
+newmtl WellSG
+illum 4
+Kd 0.80 0.80 0.80
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.20 0.20 0.20
+Ns 23.00
+newmtl WellSG1
+illum 4
+Kd 0.07 0.08 0.10
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.02 0.02 0.02
+Ns 23.00
+newmtl WindowFrameFBXASC046001SG
+illum 4
+Kd 0.03 0.01 0.01
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.01 0.00 0.00
+Ns 23.00
+newmtl WoodPlankCoverSG
+illum 4
+Kd 0.59 0.30 0.13
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.15 0.08 0.03
+Ns 23.00
+newmtl WoodSG
+illum 4
+Kd 0.05 0.02 0.01
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.01 0.00 0.00
+Ns 23.00
+newmtl lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Arriba.png
+Ni 1.00
+newmtl lambert3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Arriba.png
+Ni 1.00

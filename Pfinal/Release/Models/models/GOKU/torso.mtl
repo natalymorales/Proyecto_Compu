@@ -1,0 +1,252 @@
+newmtl brazos:Model001_Material001
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.40 0.40 0.40
+Tf 1.00 1.00 1.00
+map_Kd Cpl001p1c01s1_body_di.png
+Ni 1.00
+Ks 1.00 1.00 1.00
+Ns 50.00
+newmtl brazos:Model001_Material007
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.40 0.40 0.40
+Tf 1.00 1.00 1.00
+map_Kd Cloth_di.png
+Ni 1.00
+Ks 1.00 1.00 1.00
+Ns 50.00
+newmtl brazos:Model001_Material021
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.40 0.40 0.40
+Tf 1.00 1.00 1.00
+map_Kd Cpl001p1c01s1_body_di.png
+Ni 1.00
+Ks 1.00 1.00 1.00
+Ns 50.00
+newmtl brazos:Model001_Material027
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.40 0.40 0.40
+Tf 1.00 1.00 1.00
+map_Kd Cloth_di.png
+Ni 1.00
+Ks 1.00 1.00 1.00
+Ns 50.00
+newmtl cuerpo:Model001_Material001
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.40 0.40 0.40
+Tf 1.00 1.00 1.00
+map_Kd Cpl001p1c01s1_body_di.png
+Ni 1.00
+Ks 1.00 1.00 1.00
+Ns 50.00
+newmtl cuerpo:Model001_Material003
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.40 0.40 0.40
+Tf 1.00 1.00 1.00
+map_Kd Cloth_di.png
+Ni 1.00
+Ks 1.00 1.00 1.00
+Ns 50.00
+newmtl cuerpo:Model001_Material005
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.40 0.40 0.40
+Tf 1.00 1.00 1.00
+map_Kd Cloth_di.png
+Ni 1.00
+Ks 1.00 1.00 1.00
+Ns 50.00
+newmtl cuerpo:Model001_Material007
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.40 0.40 0.40
+Tf 1.00 1.00 1.00
+map_Kd Cloth_di.png
+Ni 1.00
+Ks 1.00 1.00 1.00
+Ns 50.00
+newmtl cuerpo:Model001_Material009
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.40 0.40 0.40
+Tf 1.00 1.00 1.00
+map_Kd Cpl001p1c01s1_eye_di.png
+Ni 1.00
+Ks 1.00 1.00 1.00
+Ns 50.00
+newmtl cuerpo:Model001_Material011
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.40 0.40 0.40
+Tf 1.00 1.00 1.00
+map_Kd Cpl001p1c01s1_eye_di.png
+Ni 1.00
+Ks 1.00 1.00 1.00
+Ns 50.00
+newmtl cuerpo:Model001_Material013
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.40 0.40 0.40
+Tf 1.00 1.00 1.00
+map_Kd Cpl001p1c01s1_hair_di.png
+Ni 1.00
+Ks 1.00 1.00 1.00
+Ns 50.00
+newmtl cuerpo:Model001_Material015
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.40 0.40 0.40
+Tf 1.00 1.00 1.00
+map_Kd Head_di_01.png
+Ni 1.00
+Ks 1.00 1.00 1.00
+Ns 50.00
+newmtl cuerpo:Model001_Material017
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.40 0.40 0.40
+Tf 1.00 1.00 1.00
+map_Kd Cloth_di.png
+Ni 1.00
+Ks 1.00 1.00 1.00
+Ns 50.00
+newmtl cuerpo:Model001_Material019
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.40 0.40 0.40
+Tf 1.00 1.00 1.00
+map_Kd Head_di_01.png
+Ni 1.00
+Ks 1.00 1.00 1.00
+Ns 50.00
+newmtl cuerpo:Model001_Material021
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.40 0.40 0.40
+Tf 1.00 1.00 1.00
+map_Kd Cpl001p1c01s1_body_di.png
+Ni 1.00
+Ks 1.00 1.00 1.00
+Ns 50.00
+newmtl cuerpo:Model001_Material025
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.40 0.40 0.40
+Tf 1.00 1.00 1.00
+map_Kd Cloth_di.png
+Ni 1.00
+Ks 1.00 1.00 1.00
+Ns 50.00
+newmtl cuerpo:Model001_Material027
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.40 0.40 0.40
+Tf 1.00 1.00 1.00
+map_Kd Cloth_di.png
+Ni 1.00
+Ks 1.00 1.00 1.00
+Ns 50.00
+newmtl cuerpo:Model001_Material037
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.40 0.40 0.40
+Tf 1.00 1.00 1.00
+map_Kd Cloth_di.png
+Ni 1.00
+Ks 1.00 1.00 1.00
+Ns 50.00
+newmtl cuerpo:Model001_Material041
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.40 0.40 0.40
+Tf 1.00 1.00 1.00
+map_Kd Cpl001p1c01s1_hair_di.png
+Ni 1.00
+Ks 1.00 1.00 1.00
+Ns 50.00
+newmtl cuerpo:Model001_Material043
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.40 0.40 0.40
+Tf 1.00 1.00 1.00
+map_Kd Head_di_01.png
+Ni 1.00
+Ks 1.00 1.00 1.00
+Ns 50.00
+newmtl cuerpo:Model001_Material045
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.40 0.40 0.40
+Tf 1.00 1.00 1.00
+map_Kd Cloth_di.png
+Ni 1.00
+Ks 1.00 1.00 1.00
+Ns 50.00
+newmtl cuerpo:Model001_Material047
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.40 0.40 0.40
+Tf 1.00 1.00 1.00
+map_Kd Head_di_01.png
+Ni 1.00
+Ks 1.00 1.00 1.00
+Ns 50.00
+newmtl cuerpo:Model001_Material049
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.40 0.40 0.40
+Tf 1.00 1.00 1.00
+map_Kd Cpl001p1c01s1_eye_di2.png
+Ni 1.00
+Ks 1.00 1.00 1.00
+Ns 50.00
+newmtl cuerpo:Model001_Material051
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.40 0.40 0.40
+Tf 1.00 1.00 1.00
+map_Kd Cpl001p1c01s1_eye_di2.png
+Ni 1.00
+Ks 1.00 1.00 1.00
+Ns 50.00
+newmtl manos:Model001_Material001
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.40 0.40 0.40
+Tf 1.00 1.00 1.00
+map_Kd Cpl001p1c01s1_body_di.png
+Ni 1.00
+Ks 1.00 1.00 1.00
+Ns 50.00
+newmtl manos:Model001_Material021
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.40 0.40 0.40
+Tf 1.00 1.00 1.00
+map_Kd Cpl001p1c01s1_body_di.png
+Ni 1.00
+Ks 1.00 1.00 1.00
+Ns 50.00
+newmtl torso:Model001_Material007
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.40 0.40 0.40
+Tf 1.00 1.00 1.00
+map_Kd Cloth_di.png
+Ni 1.00
+Ks 1.00 1.00 1.00
+Ns 50.00
+newmtl torso:Model001_Material027
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.40 0.40 0.40
+Tf 1.00 1.00 1.00
+map_Kd Cloth_di.png
+Ni 1.00
+Ks 1.00 1.00 1.00
+Ns 50.00
